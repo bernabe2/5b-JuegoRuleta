@@ -1,0 +1,59 @@
+.roulette-board {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.roulette {
+  width: 300px;
+  height: 300px;
+  border: 10px solid #000;
+  border-radius: 50%;
+  background-color: #f00;
+  position: relative;
+  display: inline-block;
+}
+#triangulo {
+  position: absolute;
+  top: calc(var(--top) + var(--tamano)/30);left: calc(var(--left) + var(--tamano)/30);
+  width: 0;height: 0; 
+  border-left: calc(var(--tamano)/15) solid transparent;
+  border-right: calc(var(--tamano)/15) solid transparent;
+  border-bottom: calc(var(--tamano)/5) solid var(--color-flecha);
+  transform: translate(calc(var(--tamano)/2),calc(var(--tamano)/2)) translate(-50%,-104.5%);
+}
+#triangulo:after {
+  position: absolute;
+  width: calc(var(--tamano)/15);height: calc(var(--tamano)/15);
+  top: 100%;left: 0%;
+  transform: translate(-50%,260%);
+  content: "";
+  background-color: var(--color-centro);
+  border-radius: 50%;
+  box-shadow: 0px 0px calc(var(--tamano)/20) black;
+}
+
+
+.spin-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.spin-button:hover {
+  background-color: #ffd700;
+}
+
+.result {
+  margin-bottom: 20px;
+}
+
+.result h2 {
+  font-size: 24px;
+  margin-top: 10px;
+  color: #000;
+}

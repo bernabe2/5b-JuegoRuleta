@@ -1,0 +1,28 @@
+<div class="roulette-board">
+    <!-- Visualización del resultado de la ruleta -->
+    <div class="result" *ngIf="resultado !== null">
+      <p>Resultado:</p>
+      <h2>{{ resultado }}</h2>
+    </div>
+    
+    <!-- Formulario de apuestas -->
+    <div class="bet-form">
+        <label for="betNumber">Número para apostar:</label>
+        <input type="number" id="betNumber" name="betNumber" [(ngModel)]="numeroApostado">
+        <button class="bet-button" (click)="realizarApuesta()">Apostar</button>
+    </div>
+  
+    <!-- Ruleta -->
+    <div class="roulette">
+      <!-- Aquí va el código de la ruleta -->
+    </div>
+  
+    <!-- Botón para girar la ruleta -->
+    <button class="spin-button" (click)="girarRuleta()">Girar la Ruleta</button>
+  
+    <!-- Mensaje de resultado de la apuesta -->
+    <div class="bet-result" *ngIf="apuestaRealizada">
+        <p *ngIf="apuestaGanada">¡Felicidades! Has ganado.</p>
+        <p *ngIf="!apuestaGanada">Lo siento, has perdido.</p>
+    </div>
+</div>
